@@ -86,24 +86,30 @@ class UsuarioPro extends Persona{
 //console.log(julia);
 //julia.mostrarDatos();
 
+class Main{
 
-const julia = new UsuarioRegular(124, "Julia Perez", "jul@gmail.com");
-julia.agregarProducto("Sabritas");
-julia.agregarProductos(["Agua", "Pan"]);
-julia.calcularTotal(); 
+    static ejecutar(){
 
+    const julia = new UsuarioRegular(124, "Julia Perez", "jul@gmail.com");
+    julia.agregarProducto("Sabritas");
+    julia.agregarProductos(["Agua", "Pan"]);
+    julia.calcularTotal(); 
 
-const pedro = new UsuarioPro(125, "Pedro Gomez", "pedro@gmail.com");
-pedro.agregarProducto("Sabritas");
-pedro.agregarProductos(["Agua", "Pan"]);
-pedro.calcularTotal(); 
+    const pedro = new UsuarioPro(125, "Pedro Gomez", "pedro@gmail.com");
+    pedro.agregarProducto("Sabritas");
+    pedro.agregarProductos(["Agua", "Pan"]);
+    pedro.calcularTotal(); 
 
-const ana = new UsuarioPro(127, "Ana Sanchez", "anas@gmail.com");
-ana.agregarProducto("Refresco");
-ana.agregarProductos(["Galletas", "Gomitas", "Chocolates"]);
-ana.calcularTotal(); 
+    const ana = new UsuarioPro(127, "Ana Sanchez", "anas@gmail.com");
+    ana.agregarProducto("Refresco");
+    ana.agregarProductos(["Galletas", "Gomitas", "Chocolates"]);
+    ana.calcularTotal(); 
 
-const moni = new UsuarioRegular(126, "Moni Albarran", "mon@gmail.com");
-julia.agregarProducto("Cafe");
-julia.agregarProductos(["Manzana", "Arroz", "Sopa"]);
-julia.calcularTotal();
+    const moni = new UsuarioRegular(126, "Moni Albarran", "mon@gmail.com");
+    moni.agregarProducto("Cafe");
+    moni.agregarProductos(["Manzana", "Arroz", "Sopa"]);
+    moni.calcularTotal();
+    }
+}
+
+Main.ejecutar();
