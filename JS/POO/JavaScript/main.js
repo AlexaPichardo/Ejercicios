@@ -30,22 +30,19 @@ correo de contacto: ${this.email}`);    //Codigo a ejecutar
         } 
     }//agregar Prodctos
 
-    calcularTotal(){
-        const precioUnitario = 100;
-        const total = this.carrito.length * precioUnitario;
-
-        console.log(`[Usuario Regular] Total: $${total.toFixed(2)}`);
-        return total; 
-    }//calcular Total
+    calcularTotal(){}//calcular Total
 }//class Persona 
 
-// clase UsuarioRegular
+// class UsuarioRegular hereda de Persona
 class UsuarioRegular extends Persona{
+    //propiedad tipo
+    tipo; 
     constructor(id, nombre, email){
-        super(id, nombre, email);
+        super(id, nombre, email); //super es Persona , ese es el constructor que se manda a llamar
         this.tipo = "Regular";
     }
     calcularTotal(){
+        console.log("Calculando el precio total para Usuario Regular...")
         const precioUnitario = 100;
         const total = this.carrito.length * precioUnitario;
 
@@ -56,14 +53,18 @@ class UsuarioRegular extends Persona{
         console.log(`[${this.tipo}] Productos: $${total.toFixed(2)} | Envío: $${costoEnvio.toFixed(2)} | Total Final: $${totalFinal.toFixed(2)}`);
         return totalFinal; 
     }
-}
+}// class UsuarioRegular
+
+
 // clase UsuarioPro
 class UsuarioPro extends Persona{
+    tipo;
     constructor(id, nombre, email){
         super(id, nombre, email);
         this.tipo = "Pro";
     }
     calcularTotal(){
+        console.log("Usuario Pro descuento del 5%, Calculando...")
         const precioUnitario = 100;
         const totalBase = this.carrito.length * precioUnitario;
         const total = totalBase * 0.95;
@@ -75,12 +76,10 @@ class UsuarioPro extends Persona{
         console.log(`[${this.tipo} - 5% Desc] Productos: $${total.toFixed(2)} | Envío: $${costoEnvio.toFixed(2)} | Total Final: $${totalFinal.toFixed(2)}`);
         return totalFinal; 
     }
-}
+} //class UsuarioPro
 
 //const julia = new Persona(124, "julia Perez", "jul@gmail.com");
-//console.log(julia); 
 //julia.agregarProducto("Sabritas");
-//julia.agregarProducto("Cafe");
 //julia.agregarProductos(["Agua", "Pan", "Dulces"]);
 //console.log(`Se agregaron ${julia.carrito.length} productos nuevos.`);
 //console.log(julia);
@@ -88,28 +87,32 @@ class UsuarioPro extends Persona{
 
 class Main{
 
-    static ejecutar(){
+    static main (){
 
     const julia = new UsuarioRegular(124, "Julia Perez", "jul@gmail.com");
     julia.agregarProducto("Sabritas");
     julia.agregarProductos(["Agua", "Pan"]);
+    console.log(julia);
     julia.calcularTotal(); 
 
     const pedro = new UsuarioPro(125, "Pedro Gomez", "pedro@gmail.com");
     pedro.agregarProducto("Sabritas");
-    pedro.agregarProductos(["Agua", "Pan"]);
+    pedro.agregarProductos(["Agua"]);
+    console.log(pedro);
     pedro.calcularTotal(); 
 
-    const ana = new UsuarioPro(127, "Ana Sanchez", "anas@gmail.com");
+    const ana = new UsuarioPro(126, "Ana Sanchez", "anas@gmail.com");
     ana.agregarProducto("Refresco");
     ana.agregarProductos(["Galletas", "Gomitas", "Chocolates"]);
+    console.log(ana);
     ana.calcularTotal(); 
 
-    const moni = new UsuarioRegular(126, "Moni Albarran", "mon@gmail.com");
+    const moni = new UsuarioRegular(127, "Moni Albarran", "mon@gmail.com");
     moni.agregarProducto("Cafe");
     moni.agregarProductos(["Manzana", "Arroz", "Sopa"]);
+    console.log(moni);
     moni.calcularTotal();
     }
 }
 
-Main.ejecutar();
+Main.main();
