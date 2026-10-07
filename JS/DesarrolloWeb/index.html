@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo web</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+<style>
+    button#temaBtn{
+        display: block;
+    }
+</style>
+</head>
+<body>
+
+    <h1>JavaScript para el desarrollo web</h1>
+
+    <main class="container">
+            <div class="row">
+                <div class="col-sm border">
+                    <h2 class="text-center">Ejercicio práctico</h2>
+                    <h3 class="text-center">Temas: DOM, WebStorage, Fetch</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm border">
+                <p class="text-center">Haz click en el botón para cambiar el tema de la página</p>
+                <button id="temaBtn" type="button" class="btn btn-secondary mx-auto text-center">Cambiar tema</button>
+            </div>
+                <div class="col-sm border">
+                    <p class="text-center">Haz click en el botón para cargar los productos de la tienda</p>
+                    <button id="fetchBtn" type="button" class="btn btn-succes mx-auto d-block">Cargar Productos</button>
+                <div id="productosContainer" class="row g-3 mt-3"></div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="./js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

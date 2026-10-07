@@ -87,7 +87,7 @@ class UsuarioPro extends Persona{
 
 class Main{
 
-    static main (){
+    static app (){
 
     const julia = new UsuarioRegular(124, "Julia Perez", "jul@gmail.com");
     julia.agregarProducto("Sabritas");
@@ -115,4 +115,4 @@ class Main{
     }
 }
 
-Main.main();
+Main.app();
